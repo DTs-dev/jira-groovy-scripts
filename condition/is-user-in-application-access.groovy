@@ -1,0 +1,7 @@
+import com.atlassian.jira.component.ComponentAccessor
+import com.atlassian.jira.application.ApplicationAuthorizationService
+import com.atlassian.jira.application.ApplicationKeys
+
+def applicationAuthorizationService = ComponentAccessor.getComponent(ApplicationAuthorizationService)
+
+applicationAuthorizationService.canUseApplication(currentUser, ApplicationKeys.CORE) || applicationAuthorizationService.canUseApplication(currentUser, ApplicationKeys.SOFTWARE)
