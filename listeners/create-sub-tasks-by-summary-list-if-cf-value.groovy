@@ -6,8 +6,8 @@ def user = ComponentAccessor.getJiraAuthenticationContext().getLoggedInUser()
 def issueFactory = ComponentAccessor.getIssueFactory()
 def subTaskManager = ComponentAccessor.getSubTaskManager()
 def issueManager = ComponentAccessor.getIssueManager()
-def department = ComponentAccessor.getCustomFieldManager().getCustomFieldObject(11111L)
-def lead = ComponentAccessor.getCustomFieldManager().getCustomFieldObject(22222L)
+def department = ComponentAccessor.getCustomFieldManager().getCustomFieldObject(11111L)		// Field for issue filter
+def lead = ComponentAccessor.getCustomFieldManager().getCustomFieldObject(22222L)		// Field for setting value in sub-task
 def issue = event.issue
 
 if( !issue.getCustomFieldValue( department ).grep('IT-service') ) {

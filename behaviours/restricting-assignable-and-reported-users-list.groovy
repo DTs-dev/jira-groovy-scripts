@@ -11,7 +11,7 @@ def assignee = userManager.getUserByName(assigneeField.getValue().toString())
 
 // Restrict reporter
 if(!projectRoleManager.isUserInProjectRole(reporter, role, issueContext.projectObject) && (reporter != null)) {
-    reporterField.setError("Автором может быть только пользователь из согласованного интеграционного списка")
+    reporterField.setError("Reporter can only be a user from the agreed integration list")
 	reporterField.setFormValue(null)
 } else {
     reporterField.clearError()
@@ -19,7 +19,7 @@ if(!projectRoleManager.isUserInProjectRole(reporter, role, issueContext.projectO
 
 // Restrict assignee
 if (!projectRoleManager.isUserInProjectRole(assignee, role, issueContext.projectObject) && (assignee != null)) {
-    assigneeField.setError("Исполнителем может быть только пользователь из согласованного интеграционного списка")
+    assigneeField.setError("Assignee can only be a user from the agreed integration list")
 	assigneeField.setFormValue(null)
 } else {
     assigneeField.clearError()
